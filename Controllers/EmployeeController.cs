@@ -54,7 +54,7 @@ namespace IBASEmployeeService.Controllers
             new Employee() {
                 Id = "32",
                 Name = "Lotte kode",
-                Email = "loje@ibas.dk",
+                Email = "loko@ibas.dk",
                 Department = new Department() { Id = 3, Name = "it" }
             },
             new Employee() {
@@ -66,13 +66,13 @@ namespace IBASEmployeeService.Controllers
             new Employee() {
                 Id = "41",
                 Name = "Torben kok",
-                Email = "koto@ibas.dk",
+                Email = "toko@ibas.dk",
                 Department = new Department() { Id = 4, Name = "kantinen" }
             },
             new Employee() {
                 Id = "42",
                 Name = "Hanne kok",
-                Email = "hama@ibas.dk",
+                Email = "hako@ibas.dk",
                 Department = new Department() { Id = 4, Name = "kantinen" }
             }
         };
