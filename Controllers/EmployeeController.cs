@@ -44,11 +44,51 @@ namespace IBASEmployeeService.Controllers
                     Id = 2,
                     Name = "Support"
                 }
+            },
+            new Employee() {
+                Id = "31",
+                Name = "Kasper Sommer",
+                Email = "kaso@ibas.dk",
+                Department = new Department() { Id = 3, Name = "it" }
+            },
+            new Employee() {
+                Id = "32",
+                Name = "Lotte kode",
+                Email = "loje@ibas.dk",
+                Department = new Department() { Id = 3, Name = "it" }
+            },
+            new Employee() {
+                Id = "33",
+                Name = "Mads kode",
+                Email = "mako@ibas.dk",
+                Department = new Department() { Id = 3, Name = "it" }
+            },
+            new Employee() {
+                Id = "41",
+                Name = "Torben kok",
+                Email = "koto@ibas.dk",
+                Department = new Department() { Id = 4, Name = "kantinen" }
+            },
+            new Employee() {
+                Id = "42",
+                Name = "Hanne kok",
+                Email = "hama@ibas.dk",
+                Department = new Department() { Id = 4, Name = "kantinen" }
             }
         };
             return employees;
         }
+        [HttpGet("GetByDepartment/{deptName}")]
+        public IEnumerable<Employee> GetByDepartment(string deptName)
+        {
+            // Vi henter den fulde liste (samme som i din Get() metode)
+            var allEmployees = Get(); 
+
+            // Vi filtrerer listen, så vi kun får dem, hvor afdelingens navn matcher (vi gør det case-insensitive)
+            var filteredEmployees = allEmployees.Where(e => 
+                e.Department.Name.Equals(deptName, StringComparison.OrdinalIgnoreCase));
+
+            return filteredEmployees;
+        }
     }
-
-
 }
