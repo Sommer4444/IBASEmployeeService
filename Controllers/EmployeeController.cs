@@ -81,10 +81,8 @@ namespace IBASEmployeeService.Controllers
         [HttpGet("GetByDepartment/{deptName}")]
         public IEnumerable<Employee> GetByDepartment(string deptName)
         {
-            // Vi henter den fulde liste (samme som i din Get() metode)
             var allEmployees = Get(); 
-
-            // Vi filtrerer listen, så vi kun får dem, hvor afdelingens navn matcher (vi gør det case-insensitive)
+            
             var filteredEmployees = allEmployees.Where(e => 
                 e.Department.Name.Equals(deptName, StringComparison.OrdinalIgnoreCase));
 
